@@ -115,14 +115,14 @@ with col2:
 
     X = array([ε, θ, L, Qs_a, Qs_b, Qs_c, Qs_d]).reshape(1, 7)
     # load scaling parameters
-    x_scaler = load('x_scaler.joblib')
-    y_scaler = load('y_scaler.joblib')
+    x_scaler = load('./model/x_scaler.joblib')
+    y_scaler = load('./model/y_scaler.joblib')
     # scale the input data (do not use .fit_transform here)
     X = x_scaler.transform(X)
     # scaling done, convert to tensor for the model
     X = torch.FloatTensor(X)
     # load the model
-    model = torch.load('Analytical.pth')
+    model = torch.load('./model/Analytical.pth')
     model.eval()   # evaluate model predictions for the input
     y = model(X).detach().numpy().reshape(1, 2)
     y = y_scaler.inverse_transform(y) 
