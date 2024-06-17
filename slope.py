@@ -7,7 +7,7 @@ from mpmath import mp, cos, sin, tan, radians, sqrt, exp, cosh, sinh, invertlapl
 import matplotlib.pyplot as plt
 from numpy import linspace, array, polyfit
 import torch
-from joblib import load
+import joblib
 
 st.set_page_config(layout="wide")   # wide layout to cover most of the page width
 col1, col2, col3 = st.columns([0.4, 0.2, 0.4])   # three columns, covering 40%, 20%, 40% of the page width
