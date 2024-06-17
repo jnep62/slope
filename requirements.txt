@@ -1,6 +1,6 @@
-streamlit
-mpmath
-matplotlib
-numpy
-torch
-joblib>=1.3.2
+streamlit==1.34.0
+mpmath==1.3.0
+matplotlib==3.7.3
+numpy==1.24.4
+torch==2.0.1
+joblib==1.3.2
