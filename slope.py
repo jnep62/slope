@@ -7,7 +7,7 @@ from mpmath import mp, cos, sin, tan, radians, sqrt, exp, cosh, sinh, invertlapl
 import matplotlib.pyplot as plt
 from numpy import linspace, array, polyfit
 import torch
-from joblib import load
+import joblib
 
 st.set_page_config(layout="wide")   # wide layout to cover most of the page width
 col1, col2, col3 = st.columns([0.4, 0.2, 0.4])   # three columns, covering 40%, 20%, 40% of the page width
@@ -115,8 +115,8 @@ with col2:
 
     X = array([ε, θ, L, Qs_a, Qs_b, Qs_c, Qs_d]).reshape(1, 7)
     # load scaling parameters
-    x_scaler = load('x_scaler.joblib')
-    y_scaler = load('y_scaler.joblib')
+    x_scaler = joblib.load('x_scaler.joblib')
+    y_scaler = joblib.load('y_scaler.joblib')
     # scale the input data (do not use .fit_transform here)
     X = x_scaler.transform(X)
     # scaling done, convert to tensor for the model
