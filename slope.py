@@ -115,7 +115,8 @@ with col2:
 
     X = array([ε, θ, L, Qs_a, Qs_b, Qs_c, Qs_d]).reshape(1, 7)
     # load scaling parameters
-    x_scaler = joblib.load('x_scaler.joblib')
+    x_scaler = open("x_scaler.joblib", "rb")
+    joblib.load(x_scaler)
     y_scaler = joblib.load('y_scaler.joblib')
     # scale the input data (do not use .fit_transform here)
     X = x_scaler.transform(X)
